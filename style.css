@@ -1,0 +1,370 @@
+html{
+  scroll-behavior: smooth;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: black;
+    user-select: none;
+}
+.mute{
+    position:absolute;
+    top: 7%;
+    right: 3%;
+    border: white 2px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-size: contain;
+    background-image: url('audio/unmuted.png');
+    width: 5vw;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+.test{
+    width:100px;
+    min-height:100px;
+    background: white;
+    margin:20px;
+    z-index: 2;
+}
+
+.tv {
+    width: 100vw;
+    height: 56.25vw;
+    max-height: 56.25vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px white;
+    overflow-x:  hidden;
+    position:relative;
+    animation-play-state: paused;
+    overflow-y: hidden;
+    scale: 0.9;
+}
+#start-screen {
+  position: absolute;
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('BACKGROUND\ LOADING\ SCREEN\'.png') ;
+  background-position: center;
+  background-size: 100%;
+  color: white;
+  text-align: center;
+  z-index: 1000000000;
+  overflow: hidden;
+  animation:pe 0s forwards 4s;
+pointer-events: none;
+}
+
+.start-button {
+width:20vw;
+aspect-ratio: 1/1;
+position: relative;
+animation:bolbol 3s ease forwards;
+transition: 0.5s;
+}
+.start-button:hover{
+ 
+  scale:1.1
+}
+#strtimg, #strtimgyel{
+  transition: 1s;
+}
+.start-button:hover #strtimg, .start-button:hover #strtimgyel{
+  scale:1.1
+}
+@keyframes pe {
+  to{pointer-events: auto;}
+}
+.start-button div{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+@keyframes bolbol {
+  0%{transform: translateY(100vh);}
+  100%{transform: translateY(0%);}
+}
+#strtimg{
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  animation: hallo 0.5s ease forwards 4.5s;
+  opacity: 0;
+}
+@keyframes hallo{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+#strtimgyel{
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  mask-image: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+  mask-repeat: no-repeat;
+  mask-size: 200%;
+  animation: load 1.3s ease forwards 4.5s;
+  mask-position: 0px 40vh;
+  transition: 1s;
+}
+#bolared{
+z-index: 1;
+}
+#bolaorange{
+  z-index: 2;
+  mask-image: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+  mask-repeat: no-repeat;
+  mask-size: 200%;
+  animation: load 3s ease forwards 2.0s;
+  mask-position: 0px 40vh;
+}
+@keyframes ikot{
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+@keyframes load {
+  to{
+    mask-position: 0px 0vh
+  }
+}
+.start-button div .bol{
+  width:100%;
+  height: 100%;
+  animation:ikot  3s ease forwards
+}
+.start-button div .bl{
+  width:100%;
+aspect-ratio: 418/122;
+}
+.tsikbaks:checked + #start-screen {
+  pointer-events: none;
+  animation: babai 2s forwards;
+}
+.tsikbaks:checked + #start-screen .start-button{
+  pointer-events: none;
+  animation: pataas 2s ease forwards;
+}
+@keyframes pataas {
+  to{transform: translateY(-150%) rotate(180deg);}
+}
+@keyframes babai{
+  0%{
+    opacity: 100%
+  }
+  100%{
+    opacity: 0%
+  }
+}
+.tsikbaks {
+  display: none;
+}
+.info{
+display: flex;
+align-items: center;
+flex-direction: row;
+transition: 0.5s ease;
+scale: 3;
+}
+.head {
+  width: 14vw;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s ease;
+  z-index: 2;
+  border-radius: 20%;
+}
+
+.head img {
+  width: 100%;
+  height: 100%;
+}
+
+.shine {
+  width: 100%;
+  height: 100%;
+  background-image: url('shinyshit.png');
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3; 
+  transform: translateX(65%) translateY(65%);
+  transition: 0.5s ease;
+  opacity: 1;
+}
+.info:hover .head .shine{
+  transform: translateX(-55%) translateY(-55%);
+}
+#maincont{
+
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100%;
+  background-image: url('BACKGROUND\ NAMEN.png');
+}
+#scrollthatshit{
+  width: 100%;
+  height:200vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+.tsikbaks:checked ~ #scrollthatshit {
+  pointer-events: auto; 
+  overflow-y: visible  
+}
+.nega{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.499);
+  animation: darklol 2s ease;
+  animation-play-state: paused;
+}
+@keyframes darklol {
+  0%{
+    opacity:0
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.desc{
+  height: 12vw;
+  position: absolute;
+  z-index: 1;
+  transition: 0.5s ease;
+  opacity: 0;
+}
+.info:hover .desc{
+ transform: translateX(-2%);
+ opacity: 1;
+}
+.info:hover .head{
+  transform: translateX(-50%) rotateY(360deg);
+  scale:1.1;
+ }
+ .info:hover{
+  transform: translateX(15%);
+ }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#scroll-content {
+  width: 100%;
+  height: 200vh; /* Makes it taller to enable scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+  color: white;
+}
+
+.scroll-image {
+  width: 80%;
+  height: auto;
+  margin: 20px 0;
+  border: 2px solid white;
+}
+#au1, #au2, #au3, #au4, #au5{
+  width:100%;
+height: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px white;
+}
+#au1{
+  background-image: url('AGIR.png');
+}
+#au2{
+  background-image: url('MARCO.png');
+}
+#au3{
+  background-image: url('RUKAWA_LANCE.png');
+}
+#au4{
+  background-image: url('AQUINOOP.png');
+}
+#au5{
+  background-image: url('BACKGROUND_MO_LOUIE.png');
+}
+
+@keyframes playAnimation {
+  0% {
+overflow-y: hidden;
+  }
+  100% {
+overflow-y: auto;
+  }
+}
+
+.play {
+  animation: playAnimation 3s forwards;
+}
+
+@keyframes sisig {
+  0% {
+opacity: 0;  }
+  100% {
+opacity: 1;
+  }
+}
+
+.sigma {
+  animation: sisig 3s forwards;
+}
+
+.home{
+  position: fixed;
+  width: 8vw;
+  aspect-ratio: 1/1;
+  bottom: 5%;
+  left:5%;
+  background-image: url('HOMEBUTTON.png');
+  background-size: cover;
+opacity:0;
+transition: 0.3s ease;
+}
+.home:hover{
+  transform: rotate(20deg) translateY(-3%);
+
+  scale:1.3;
+}

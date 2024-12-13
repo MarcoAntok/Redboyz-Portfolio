@@ -1,0 +1,194 @@
+#redshade{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('RED\ SHADE.png');
+    pointer-events: none;
+    z-index: 1;
+    animation: paright 2s ease forwards;
+
+}
+#start-screen .start-button{
+    z-index: 2;
+}
+#start-screen h1{
+    z-index: 2;
+}
+@keyframes paright{
+    0%{transform: translateX(-100%);}
+    100%{transform: translateX(0%);}
+}
+@keyframes paright2{
+    0%{transform: translateX(-100%);}
+    100%{transform: translateX(10%);}
+}
+
+#hello{
+    width:100%;
+animation:paright2 1s ease forwards ;
+animation-play-state: paused;
+transform: translateX(-100%);
+z-index: 2;
+}
+#redboyz{
+    width:100%;
+animation:paright2 1s ease forwards 0.5s;
+animation-play-state: paused;
+transform: translateX(-100%);
+z-index: 2;
+transition: 0.5s;
+}
+#hello img{
+    width: 100%;
+    height: auto;
+}
+#redboyz img{
+    width: 130%;
+    height: auto;
+}
+#redboyz .shine{
+    height: 90%;
+    transform: translateY(2%) translateX(90%);
+    opacity: 0;
+    transition:1s;
+    pointer-events: none;
+}
+#redboyz:not(:hover) .shine{
+    transition:0s
+}
+#redboyz:hover .shine{
+    transform: translateY(2%) translateX(-90%);
+    animation:shing 0.5s ease;
+}
+
+@keyframes shing {
+    0%,100%{opacity: 0;}
+    40%,60%{opacity:1}
+}
+#redboyz:hover{
+    scale: 1.1;
+}
+.skibidi{
+    display: flex;
+    width:35%;
+    height:50vh;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left:0;
+    justify-content: center;
+}
+
+#rightside{
+    position: absolute;
+    width:50%;
+    height:100%;
+    right:0;
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slider-container {
+    display: flex;
+    position: relative;
+    width: 79%;
+    overflow: hidden;
+    justify-content: center;
+    flex-direction: column;
+    height: 50%;
+    transform: translateX(10%) translateY(50%);
+  /*  border: solid 0.25vw white; */
+}
+.slider {
+    width: 100%;
+    display: flex;
+    transition: transform 1s ease;
+
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    filter:drop-shadow(0px 0px 1.5vw black);
+
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#header{
+    width:100%;
+    height:15%;
+    background: url('givemehead.png');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    z-index: 2;
+    display: flex;
+   justify-content: center;
+    align-items: center;
+   z-index: 5;
+}
+.givemehead{
+    position: absolute;
+display: flex;
+flex-direction: row;
+width: 40%;
+height:15%;
+justify-items: center;
+z-index: 100;
+transform: translateY(150%) translateX(-60%);
+}
+.givemehead a{
+    
+}
+.heads{
+    width:20%;
+    aspect-ratio:1/1;
+    filter: grayscale(1);
+    scale:0.6;
+    transition: 0.5s ease;
+
+}
+.heads:hover{
+    filter: grayscale(0);
+    scale:0.8;
+}
+.heads img{
+    width:100%;
+    height: 100%;
+}
